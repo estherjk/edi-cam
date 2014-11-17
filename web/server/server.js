@@ -1,5 +1,3 @@
-/// Usage: node server.js <secret>
-
 // modules
 var express = require('express')
   , http = require('http')
