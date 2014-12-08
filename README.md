@@ -1,6 +1,6 @@
 # edi-cam
 
-edi-cam demonstrates live video streaming on Intel Edison using Node.js and WebSockets. Audio is not supported at the moment. See the demo in action [here](http://youtu.be/JSgqzqlpC0Y).
+edi-cam demonstrates live video streaming on Intel Edison using Node.js and WebSockets. Audio is not supported at the moment. See the demo in action [here](http://youtu.be/nVDL2-bFT3Y).
 
 The Node.js server is responsible for:
 
