@@ -22,7 +22,7 @@ http.createServer(app).listen(app.get('port'), function () {
 });
 
 /// Video streaming section
-// Reference: https://github.com/phoboslab/jsmpeg
+// Reference: https://github.com/phoboslab/jsmpeg/blob/master/stream-server.js
 
 var STREAM_MAGIC_BYTES = 'jsmp'; // Must be 4 bytes
 var width = 320;
