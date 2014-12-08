@@ -62,10 +62,6 @@ wsServer.broadcast = function(data, opts) {
 
 // HTTP server to accept incoming MPEG1 stream
 http.createServer(function (req, res) {
-  var params = req.url.substr(1).split('/');
-  width = (params[0] || 320)|0;
-  height = (params[1] || 240)|0;
-
   console.log(
     'Stream Connected: ' + req.socket.remoteAddress + 
     ':' + req.socket.remotePort + ' size: ' + width + 'x' + height
