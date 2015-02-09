@@ -5,14 +5,20 @@
 # latest release, and replace in the shell script.
 
 # CHANGE THIS TO THE APPROPRIATE FILENAME
-FNAME=ffmpeg-2.4.3-32bit-static.tar.xz
+FNAME=ffmpeg-release-32bit-static.tar.xz
 
-echo Downloading ffmpeg...
-mkdir /home/root/bin
+echo "Creating ~/bin directory if it doesn't exist..."
+mkdir -p foo
+
+echo "Removing old versions of ffmpeg..."
+rm -rf ~/bin/ffmpeg*
+
+echo "Downloading ffmpeg..."
 wget -P /home/root/bin http://johnvansickle.com/ffmpeg/releases/$FNAME
 
-echo Unpacking .tar.xz file...
+echo "Unpacking..."
 tar -xf /home/root/bin/$FNAME -C /home/root/bin
 
-echo Cleaning up...
+echo "Cleaning up..."
 rm /home/root/bin/$FNAME
+mv /home/root/bin/ffmpeg*/ /home/root/bin/ffmpeg
