@@ -5,7 +5,7 @@ edi-cam demonstrates live video streaming on Intel Edison using Node.js and WebS
 The Node.js server is responsible for:
 
 * Listening for the incoming video stream via HTTP. [ffmpeg](https://www.ffmpeg.org/), a multimedia framework for converting and streaming audio / video, is used to encode the webcam's video to MPEG1.
-* Broadcasting the video stream via WebSockets to all connected browsers. 
+* Broadcasting the video stream via WebSockets to all connected browsers.
 * Serving `web/client/index.html`, which renders the video stream onto a canvas element. [jsmpeg](https://github.com/phoboslab/jsmpeg), a JavaScript MPEG1 decoder, is used to decode the video stream.
 
 This project was inspired by [phoboslab](http://phoboslab.org/log/2013/09/html5-live-video-streaming-via-websockets).
@@ -19,8 +19,8 @@ The setup assumes that Edison and your computer are on the same Wi-Fi network. T
 With Edison and your computer on the same Wi-Fi network, it is also possible to connect to Edison wirelessly via SSH. This is particularly helpful when running the demo. To do so, open a new terminal window and type the following:
 
     $ ssh root@myedison.local
-    root@myedison.local's password: 
-    root@myedison:~# 
+    root@myedison.local's password:
+    root@myedison:~#
 
 Replace `myedison` with the name of your Edison. When prompted for your password, use the password you created when configuring Edison.
 
@@ -45,9 +45,7 @@ To configure the repository, add the following lines to `/etc/opkg/base-feeds.co
     src/gz edison http://repo.opkg.net/edison/repo/edison
     src/gz core2-32 http://repo.opkg.net/edison/repo/core2-32
 
-The configuration used in this demo is also provided for reference. If `/etc/opkg/base-feeds.conf` is empty, simply copy this file into `/etc/opkg/`. If you are in the `edi-cam` root directory, type the following:
-
-    cp etc/opkg/base-feeds.conf /etc/opkg/
+The configuration used in this demo is also provided for reference. If `/etc/opkg/base-feeds.conf` is empty, simply copy this file into `/etc/opkg/`.
 
 Update `opkg`:
 
@@ -95,7 +93,7 @@ If the webcam is plugged into the board, unplug and plug it back in to make sure
 
 Also, verify that the video device node has been created by typing `ls -l /dev/video0`:
 
-    root@eejun-edison02:~# ls -l /dev/video0 
+    root@eejun-edison02:~# ls -l /dev/video0
     crw-rw----    1 root     video      81,   0 Nov 10 15:57 /dev/video0
 
 #### Installing ffmpeg
