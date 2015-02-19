@@ -73,27 +73,28 @@ Then clone this repository using `git clone <git repo URL>`.
 
 #### Installing the UVC driver
 
-To install the UVC driver:
+Older versions of the Edison Yocto image do not contain the UVC driver. To check whether or not the UVC driver is installed, type the following:
+
+    find /lib/modules/* -name 'uvc'
+
+If the UVC driver is installed, the output should look something like this:
+
+    /lib/modules/3.10.17-poky-edison+/kernel/drivers/media/usb/uvc
+
+If nothing is returned, the UVC driver needs to be installed:
 
     opkg install kernel-module-uvcvideo
 
-If the webcam is plugged into the board, unplug and plug it back in to make sure the webcam is detected properly. Verify that the webcam is detected by typing `dmsg -c`. The console output should look similar to this (the product information will be specific to your webcam):
+To make sure the UVC driver is loaded and the webcam is detected properly, plug in your webcam, then type `lsmod | grep uvc`:
 
-    [   92.910838] hub 2-0:1.0: USB hub found
-    [   92.910899] hub 2-0:1.0: 1 port detected
-    [   92.957888] pmic_ccsm pmic_ccsm: USB VBUS Detected. Notifying OTG driver
-    [   93.210150] usb 1-1: new high-speed USB device number 2 using dwc3-host
-    [   93.329961] usb 1-1: New USB device found, idVendor=041e, idProduct=4095
-    [   93.329992] usb 1-1: New USB device strings: Mfr=3, Product=1, SerialNumber=2
-    [   93.330014] usb 1-1: Product: Live! Cam Sync HD VF0770
-    [   93.330033] usb 1-1: Manufacturer: Creative Technology Ltd.
-    [   93.330052] usb 1-1: SerialNumber: 2014090439994
-    [   93.339634] uvcvideo: Found UVC 1.00 device Live! Cam Sync HD VF0770 (041e:4095)
-    [   93.352641] input: Live! Cam Sync HD VF0770 as /devices/pci0000:00/0000:00:11.0/dwc3-host.2/usb1/1-1/1-1:1.0/input/input3
+    root@myedison:~# lsmod | grep uvc
+    uvcvideo               71516  0
+    videobuf2_vmalloc      13003  1 uvcvideo
+    videobuf2_core         37707  1 uvcvideo
 
 Also, verify that the video device node has been created by typing `ls -l /dev/video0`:
 
-    root@eejun-edison02:~# ls -l /dev/video0
+    root@myedison:~# ls -l /dev/video0
     crw-rw----    1 root     video      81,   0 Nov 10 15:57 /dev/video0
 
 #### Installing ffmpeg
