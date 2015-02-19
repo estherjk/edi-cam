@@ -30,8 +30,8 @@ Use a [UVC-compatible webcam](http://www.ideasonboard.org/uvc/). In my setup, I 
 
 External power (7-15 VDC) must be supplied to use Edison as a USB host. Refer to the appropriate item below (based on the board you have) to power and connect a USB device:
 
-* If you have the Arduino breakout board, see this [document](https://communities.intel.com/docs/DOC-23161). Power must be supplied on J1 (the power jack). Plug the webcam into the USB port next to the power jack. Make sure the switch SW1 is switched towards the USB port.
-* If you have the Mini breakout board, see this [document](https://communities.intel.com/docs/DOC-23252). Power must be supplied on J21 / J22, e.g. a 9V battery can be connected to J21 with a 2-pin connector. Connect a micro USB to USB OTG adapter to the webcam and plug into the micro USB port closest to J21 (lower right).
+* If you have the Arduino breakout board, see this [document](http://www.intel.com/support/edison/sb/CS-035275.htm). Power must be supplied on J1 (the power jack). Plug the webcam into the USB port next to the power jack. Make sure the switch SW1 is switched towards the USB port.
+* If you have the Mini breakout board, see this [document](http://www.intel.com/support/edison/sb/CS-035252.htm). Power must be supplied on J21 / J22, e.g. a 9V battery can be connected to J21 with a 2-pin connector. Connect a micro USB to USB OTG adapter to the webcam and plug into the micro USB port closest to J21 (lower right).
 
 ### Installing packages
 
