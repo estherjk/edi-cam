@@ -1,5 +1,6 @@
 // modules
-var express = require('express')
+var childProcess = require('child_process')
+  , express = require('express')
   , http = require('http')
   , morgan = require('morgan')
   , ws = require('ws');
@@ -43,7 +44,7 @@ wsServer.on('connection', function(socket) {
   socket.send(streamHeader, { binary: true });
 
   console.log('New WebSocket Connection (' + wsServer.clients.length + ' total)');
-  
+
   socket.on('close', function(code, message){
     console.log('Disconnected WebSocket (' + wsServer.clients.length + ' total)');
   });
@@ -63,7 +64,7 @@ wsServer.broadcast = function(data, opts) {
 // HTTP server to accept incoming MPEG1 stream
 http.createServer(function (req, res) {
   console.log(
-    'Stream Connected: ' + req.socket.remoteAddress + 
+    'Stream Connected: ' + req.socket.remoteAddress +
     ':' + req.socket.remotePort + ' size: ' + width + 'x' + height
   );
 
@@ -72,6 +73,9 @@ http.createServer(function (req, res) {
   });
 }).listen(configServer.streamPort, function () {
   console.log('Listening for video stream on port ' + configServer.streamPort);
+
+  // Run do_ffmpeg.sh from node                                                   
+  childProcess.exec('~/edi-cam/bin/do_ffmpeg.sh');
 });
 
 module.exports.app = app;

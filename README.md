@@ -127,46 +127,12 @@ Replace `myedison` with the name of your Edison.
 * Navigate to `web/server`.
 * Run the server by typing `node server.js`.
 
-The Node.js server should now be running. The console will look like this:
+The Node.js server should now be running. The console will look something like this:
 
     WebSocket server listening on port 8084
     HTTP server listening on port 8080
     Listening for video stream on port 8082
-
-#### Converting the video using ffmpeg
-
-Now that the server has started, do the following:
-
-* Open a new shell window, SSH into Edison, and navigate to `bin`.
-* Type `./do_ffmpeg.sh` to run the shell script.
-
-The video stream should now be converting. The console will look similar to this:
-
-    ffmpeg version 2.4.3-   http://johnvansickle.com/ffmpeg/    Copyright (c) 2000-2014 the FFmpeg developers
-      built on Nov  4 2014 13:48:54 with gcc 4.8 (Debian 4.8.3-13)
-      configuration: --enable-gpl --enable-version3 --disable-shared --disable-debug --enable-runtime-cpudetect --enable-libmp3lame --enable-libx264 --enable-libx265 --enable-libwebp --enable-libspeex --enable-libvorbis --enable-libvpx --enable-libfreetype --enable-fontconfig --enable-libxvid --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libtheora --enable-libvo-aacenc --enable-libvo-amrwbenc --enable-gray --enable-libopenjpeg --enable-libopus --disable-ffserver --enable-libass --enable-gnutls --cc=gcc-4.8
-      libavutil      54.  7.100 / 54.  7.100
-      libavcodec     56.  1.100 / 56.  1.100
-      libavformat    56.  4.101 / 56.  4.101
-      libavdevice    56.  0.100 / 56.  0.100
-      libavfilter     5.  1.100 /  5.  1.100
-      libswscale      3.  0.100 /  3.  0.100
-      libswresample   1.  1.100 /  1.  1.100
-      libpostproc    53.  0.100 / 53.  0.100
-    Input #0, video4linux2,v4l2, from '/dev/video0':
-      Duration: N/A, start: 102.771608, bitrate: 36864 kb/s
-        Stream #0:0: Video: rawvideo (YUY2 / 0x32595559), yuyv422, 320x240, 36864 kb/s, 30 fps, 30 tbr, 1000k tbn, 1000k tbc
-    Please use -b:a or -b:v, -b is ambiguous
-    Output #0, mpeg1video, to 'http://127.0.0.1:8082/320/240/':
-      Metadata:
-        encoder         : Lavf56.4.101
-        Stream #0:0: Video: mpeg1video, yuv420p, 320x240, q=2-31, 800 kb/s, 30 fps, 30 tbn, 30 tbc
-        Metadata:
-          encoder         : Lavc56.1.100 mpeg1video
-    Stream mapping:
-      Stream #0:0 -> #0:0 (rawvideo (native) -> mpeg1video (native))
-    Press [q] to stop, [?] for help
-    frame=  170 fps= 31 q=1.8 size=     645kB time=00:00:05.60 bitrate= 943.2kbits/s dup=1 drop=0
+    Stream Connected: 127.0.0.1:52995 size: 320x240
 
 #### Viewing the video stream
 
