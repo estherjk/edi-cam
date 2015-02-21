@@ -8,7 +8,7 @@
 FNAME=ffmpeg-release-32bit-static.tar.xz
 
 echo "Creating ~/bin directory if it doesn't exist..."
-mkdir -p foo
+mkdir -p ~/bin
 
 echo "Removing old versions of ffmpeg..."
 rm -rf ~/bin/ffmpeg*
