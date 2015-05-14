@@ -73,7 +73,7 @@ Then clone this repository using `git clone <git repo URL>`.
 
 #### Installing the UVC driver
 
-Older versions of the Edison Yocto image do not contain the UVC driver. To check whether or not the UVC driver is installed, type the following:
+Older versions of the Edison Yocto image do not contain the UVC driver. To **check whether or not the UVC driver is installed**, type the following:
 
     find /lib/modules/* -name 'uvc'
 
@@ -81,7 +81,7 @@ If the UVC driver is installed, the output should look something like this:
 
     /lib/modules/3.10.17-poky-edison+/kernel/drivers/media/usb/uvc
 
-If nothing is returned, the UVC driver needs to be installed:
+If **nothing** is returned, the UVC driver needs to be installed:
 
     opkg install kernel-module-uvcvideo
 
