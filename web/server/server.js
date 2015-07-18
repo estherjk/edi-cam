@@ -26,8 +26,8 @@ http.createServer(app).listen(app.get('port'), function () {
 // Reference: https://github.com/phoboslab/jsmpeg/blob/master/stream-server.js
 
 var STREAM_MAGIC_BYTES = 'jsmp'; // Must be 4 bytes
-var width = 320;
-var height = 240;
+var width = 640;
+var height = 360;
 
 // WebSocket server
 var wsServer = new (ws.Server)({ port: configServer.wsPort });
@@ -74,7 +74,7 @@ http.createServer(function (req, res) {
 }).listen(configServer.streamPort, function () {
   console.log('Listening for video stream on port ' + configServer.streamPort);
 
-  // Run do_ffmpeg.sh from node                                                   
+  // Run do_ffmpeg.sh from node
   childProcess.exec('../../bin/do_ffmpeg.sh');
 });
 
