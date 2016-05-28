@@ -30,9 +30,6 @@
 
   <script src="/jsmpg.js"></script>
   <script type="text/javascript">
-    // CHANGE THIS TO THE APPROPRIATE WS ADDRESS
-    var wsUrl = 'ws://myedison.local:8084/';
-
     // Show loading notice
     var canvas = document.getElementById('canvas-video');
     var ctx = canvas.getContext('2d');
@@ -40,7 +37,7 @@
     ctx.fillText('Loading...', canvas.width/2-30, canvas.height/3);
 
     // Start the player
-    var client = new WebSocket(wsUrl);
+    var client = new WebSocket('ws://' + document.domain + ':8084');
     var player = new jsmpeg(client, { canvas:canvas });
   </script>
 </body>

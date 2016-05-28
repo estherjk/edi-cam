@@ -113,15 +113,6 @@ If the download doesn't work, the release link may have changed. Check [here](ht
 
 ### Running the demo
 
-#### Updating the WebSocket address
-
-Modify `wsUrl` in `web/client/index.html`. The section of the code looks like this:
-
-    // CHANGE THIS TO THE APPROPRIATE WS ADDRESS
-    var wsUrl = 'ws://myedison.local:8084/';
-
-Replace `myedison` with the name of your Edison.
-
 #### Running the Node.js server
 
 * Navigate to `web/server`.
